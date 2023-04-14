@@ -76,7 +76,39 @@
         </div>
       </nav>
     </header>
+
     <main>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <section class="form-body">
         <div class="container">
           <div class="row">
@@ -85,12 +117,16 @@
                 <div class="form-items">
                   <h1>Generaciones</h1>
                   <p>Averigua a que generacion perteneces:</p>
-                  <form class="requires-validation" novalidate>
+                  <form
+                    class="requires-validation"
+                    onsubmit="enviar_formulario()"
+                    novalidate
+                  >
                     <div class="col-md-12">
                       <input
                         class="form-control"
                         type="text"
-                        name="name"
+                        id="nombre"
                         placeholder="Nombre y Apellido"
                         required
                       />
@@ -98,22 +134,7 @@
                         ¡El campo de usuario nombre y apellido es válido!
                       </div>
                       <div class="invalid-feedback">
-El campo nombre de usario no puede estar vacio.                      </div>
-                    </div>
-
-                    <div class="col-md-12 mt-3">
-                      <input
-                        class="form-control"
-                        type="date"
-                        name="fecha_nacimiento"
-                        placeholder="Fecha Nacimiento"
-                        required
-                      />
-                      <div class="valid-feedback">
-                        ¡El campo de usuario fecha es válido!
-                      </div>
-                      <div class="invalid-feedback">
-                        Fecha Nacimiento field cannot be blank!
+                        El campo nombre de usario no puede estar vacio.
                       </div>
                     </div>
 
@@ -121,7 +142,23 @@ El campo nombre de usario no puede estar vacio.                      </div>
                       <input
                         class="form-control"
                         type="number"
-                        name="name"
+                        id="anio_nacimiento"
+                        placeholder="Año de nacimiento"
+                        required
+                      />
+                      <div class="valid-feedback">
+                        ¡El campo de usuario anio_nacimiento es válido!
+                      </div>
+                      <div class="invalid-feedback">
+                        El campo anio_nacimiento no puede estar vacio.
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                      <input
+                        class="form-control"
+                        type="number"
+                        id="edad"
                         placeholder="Edad"
                         required
                       />
@@ -129,29 +166,47 @@ El campo nombre de usario no puede estar vacio.                      </div>
                         ¡El campo de usuario edad es válido!
                       </div>
                       <div class="invalid-feedback">
-El campo edad no puede estar vacio.                      </div>
+                        El campo edad no puede estar vacio.
+                      </div>
                     </div>
 
                     <div class="col-md-12 mt-3">
                       <input
                         class="form-control"
                         type="number"
-                        name="name"
-                        placeholder="Año de nacimiento"
+                        id="peso"
+                        placeholder="Peso"
                         required
                       />
                       <div class="valid-feedback">
-                        ¡El campo de usuario año de nacimiento es válido!
+                        ¡El campo de usuario edad es válido!
                       </div>
                       <div class="invalid-feedback">
-                        El campo nacimiento no puede estar vacío.                      </div>
+                        El campo edad no puede estar vacio.
+                      </div>
                     </div>
 
                     <div class="col-md-12 mt-3">
                       <input
                         class="form-control"
                         type="number"
-                        name="dni"
+                        id="altura"
+                        placeholder="Altura"
+                        required
+                      />
+                      <div class="valid-feedback">
+                        ¡El campo de usuario edad es válido!
+                      </div>
+                      <div class="invalid-feedback">
+                        El campo edad no puede estar vacio.
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                      <input
+                        class="form-control"
+                        type="number"
+                        id="dni"
                         placeholder="DNI"
                         required
                       />
@@ -159,17 +214,16 @@ El campo edad no puede estar vacio.                      </div>
                         ¡El campo de usuario DNI es válido!
                       </div>
                       <div class="invalid-feedback">
-                        El campo DNI no puede estar en blanco.                      </div>
+                        El campo DNI no puede estar en blanco.
+                      </div>
                     </div>
 
-                
-
                     <div class="col-md-12">
-                      <select class="form-select mt-3" required>
+                      <select class="form-select mt-3" id="genero" required>
                         <option selected disabled value="">Género</option>
-                        <option value="hombre">Hombre</option>
-                        <option value="mujer">Mujer</option>
-                        <option value="otros">Otros</option>
+                        <option value="H">Hombre</option>
+                        <option value="M">Mujer</option>
+                        <option value="X">Otros</option>
                       </select>
                       <div class="valid-feedback">Seleciono un campo.</div>
                       <div class="invalid-feedback">
@@ -177,36 +231,32 @@ El campo edad no puede estar vacio.                      </div>
                       </div>
                     </div>
 
-                   
-
                     <div class="col-md-12 mt-3 text-end">
                       <!--<label class="mb-3 mr-1" for="gender">Resultados: </label> -->
-
-                    
 
                       <input
                         type="radio"
                         class="btn-check"
-                        name="gender"
-                        id="female"
+                        name="es_mayor_edad"
+                        id="es_mayor_edad"
                         autocomplete="off"
                         required
                       />
-                      <button
+                      <!-- <button
                         class="btn btn-sm btn-outline-secondary"
-                        for="female"
+                        for="si"
                         >Es mayor de edad</button
-                      >
+                      > -->
 
-                      <div class="valid-feedback mv-up ">
+                      <div class="valid-feedback mv-up">
                         You selected a gender!
                       </div>
-                      <div class="invalid-feedback mv-up">
+                      <!-- <div class="invalid-feedback mv-up">
                         Please select a gender!
-                      </div>
+                      </div> -->
                     </div>
 
-                    <div class="form-check mt-3 ">
+                    <div class="form-check mt-3">
                       <input
                         class="form-check-input"
                         type="checkbox"
@@ -214,16 +264,23 @@ El campo edad no puede estar vacio.                      </div>
                         id="invalidCheck"
                         required
                       />
-                      <label class="form-check-label "
+                      <label class="form-check-label"
                         >Confirma que todos los datos son correctos</label
                       >
                       <div class="invalid-feedback">
-                        Por favor, confirme que los datos introducidos sean correctos.
+                        Por favor, confirme que los datos introducidos sean
+                        correctos.
                       </div>
                     </div>
 
                     <div class="form-button mt-3 text-center">
-                      <button id="submit" type="submit" class="btn btn-primary">
+                      <button
+                        id="submit"
+                        type="submit"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
                         Mostrar generación
                       </button>
                     </div>
