@@ -2,7 +2,7 @@
 
 ## Ejercicio generaciones
 
-📋 El repositorio contiene el ejercicio N°2, donde se realizo de generaciones. Pertenece al quinto trabajo práctico de DOM y BOM en JavaScript. Para Rolling Code, de la comisión 41 i-2022.
+📋 El repositorio contiene el ejercicio N°2, donde se realizo el ejercicio de generaciones. Pertenece al quinto trabajo práctico de DOM y BOM en JavaScript. Para Rolling Code, de la comisión 41 i-2022.
 
 # Demo
 
