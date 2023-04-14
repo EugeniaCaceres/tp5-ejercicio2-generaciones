@@ -63,52 +63,61 @@ class Persona {
   }
 }
 
-const persona1 = new Persona(
-  "Juan",
-  25,
-  Persona.generarDni(),
-  "H",
-  70,
-  1.8,
-  1996
-);
-document.write(persona1.mostrarDatos);
-document.write(persona1.mostrarGeneracion);
-document.write(persona1.esMayorDeEdad, "<br>");
-
-const persona2 = new Persona(
-  "Ana",
-  17,
-  Persona.generarDni(),
-  "M",
-  60,
-  1.65,
-  2005
-);
-document.write(persona2.mostrarDatos);
-document.write(persona2.mostrarGeneracion);
-document.write(persona2.esMayorDeEdad, "<br>");
-
-const dniAleatorio = Persona.generarDni();
 
 
 //Formulario index
 
 (function () {
-    'use strict'
-    const forms = document.querySelectorAll('.requires-validation')
-    Array.from(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-    
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-    
+  "use strict";
+  const forms = document.querySelectorAll(".requires-validation");
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
 
-    
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
+
+
+var exampleModal = document.getElementById("exampleModal");
+var modalTitle = exampleModal.querySelector(".modal-title");
+var modalBodyInput = exampleModal.querySelector(".modal-body");
+
+function enviar_formulario() {
+  let nombre = document.getElementById("nombre").value;
+
+  let fecha_nacimiento = document.getElementById("fecha_nacimiento").value;
+
+  let edad = document.getElementById("edad").value;
+
+  let peso = document.getElementById("peso").value;
+
+  let altura = document.getElementById("altura").value;
+
+  let anio_nacimiento = document.getElementById("anio_nacimiento").value;
+
+  let dni = document.getElementById("dni").value;
+
+  let genero = document.getElementById("genero").value;
+
+
+  const persona1 = new Persona(
+    nombre,
+    edad,
+    dni,
+    genero,
+    peso,
+    altura,
+    anio_nacimiento
+  );
+  modalTitle.textContent = "Tu generaración es:";
+  modalBodyInput.textContent = persona1.mostrarGeneracion;
+}
