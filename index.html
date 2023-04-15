@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Taxonomía de Generaciones</title>
   </head>
-  <body>
+  <body data-bs-theme="light">
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
@@ -60,12 +60,12 @@
                 </span>
                 <ul class="dropdown-menu">
                   <li>
-                    <button class="dropdown-item">
+                    <button class="dropdown-item" id="btn-theme-light">
                       <i class="bi bi-sun"></i> Light
                     </button>
                   </li>
                   <li>
-                    <button class="dropdown-item">
+                    <button class="dropdown-item" id="btn-theme-dark">
                       <i class="bi bi-moon-stars-fill"></i> Dark
                     </button>
                   </li>
@@ -150,7 +150,7 @@
                         ¡El campo de usuario anio_nacimiento es válido!
                       </div>
                       <div class="invalid-feedback">
-                        El campo anio_nacimiento no puede estar vacio.
+                        El campo año de nacimiento no puede estar vacio.
                       </div>
                     </div>
 
@@ -179,10 +179,10 @@
                         required
                       />
                       <div class="valid-feedback">
-                        ¡El campo de usuario edad es válido!
+                        ¡El campo de usuario peso es válido!
                       </div>
                       <div class="invalid-feedback">
-                        El campo edad no puede estar vacio.
+                        El campo peso no puede estar vacio.
                       </div>
                     </div>
 
@@ -195,10 +195,10 @@
                         required
                       />
                       <div class="valid-feedback">
-                        ¡El campo de usuario edad es válido!
+                        ¡El campo de usuario altura es válido!
                       </div>
                       <div class="invalid-feedback">
-                        El campo edad no puede estar vacio.
+                        El campo altura no puede estar vacio.
                       </div>
                     </div>
 
@@ -210,16 +210,14 @@
                         placeholder="DNI"
                         required
                       />
-                      <div class="valid-feedback">
-                        ¡El campo de usuario DNI es válido!
-                      </div>
+                      <div class="valid-feedback">¡El campo DNI es válido!</div>
                       <div class="invalid-feedback">
-                        El campo DNI no puede estar en blanco.
+                        El campo DNI no puede estar en vacio.
                       </div>
                     </div>
 
-                    <div class="col-md-12">
-                      <select class="form-select mt-3" id="genero" required>
+                    <div class="col-md-12 mt-3">
+                      <select class="form-select" id="genero" required>
                         <option selected disabled value="">Género</option>
                         <option value="H">Hombre</option>
                         <option value="M">Mujer</option>
@@ -227,7 +225,7 @@
                       </select>
                       <div class="valid-feedback">Seleciono un campo.</div>
                       <div class="invalid-feedback">
-                        Por favor selecciona un campo!
+                        Por favor selecciona un campo.
                       </div>
                     </div>
 
@@ -293,7 +291,7 @@
       </section>
     </main>
     <footer class="bg-dark text-light text-center py-3">
-      &copyTodos los derechos reservados
+      &copy Todos los derechos reservados
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
