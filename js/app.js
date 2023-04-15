@@ -91,8 +91,6 @@ var modalBodyInput = exampleModal.querySelector(".modal-body");
 function enviar_formulario() {
   let nombre = document.getElementById("nombre").value;
 
-  let fecha_nacimiento = document.getElementById("fecha_nacimiento").value;
-
   let edad = document.getElementById("edad").value;
 
   let peso = document.getElementById("peso").value;
@@ -114,6 +112,9 @@ function enviar_formulario() {
     altura,
     anio_nacimiento
   );
+
+  console.log(persona1.mostrarGeneracion);
+
   modalTitle.textContent = "Tu generaración es:";
   modalBodyInput.textContent = persona1.mostrarGeneracion;
 }
