@@ -63,8 +63,6 @@ class Persona {
   }
 }
 
-
-
 //Formulario index
 
 (function () {
@@ -86,7 +84,6 @@ class Persona {
   });
 })();
 
-
 var exampleModal = document.getElementById("exampleModal");
 var modalTitle = exampleModal.querySelector(".modal-title");
 var modalBodyInput = exampleModal.querySelector(".modal-body");
@@ -107,7 +104,6 @@ function enviar_formulario() {
   let dni = document.getElementById("dni").value;
 
   let genero = document.getElementById("genero").value;
-
 
   const persona1 = new Persona(
     nombre,
