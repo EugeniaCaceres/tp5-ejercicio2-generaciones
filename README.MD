@@ -1,4 +1,4 @@
-# 5° Trabajo Práctico de Java Script practicas con DOM y BOM.⏰
+# 5° Trabajo Práctico de Java Script practicas con DOM y BOM.
 
 ## Ejercicio generaciones
 
